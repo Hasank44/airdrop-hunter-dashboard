@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-black text-white antialiased;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(16, 185, 129, 0.08), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 90% 100%, rgba(99, 102, 241, 0.06), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 10% 100%, rgba(15, 23, 42, 0.9), transparent 70%),
+      linear-gradient(180deg, #000000 0%, #050810 100%);
+    background-attachment: fixed;
+  }
+  * { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent; }
+  *::-webkit-scrollbar { width: 8px; height: 8px; }
+  *::-webkit-scrollbar-track { background: transparent; }
+  *::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border border-white/10 bg-[#0B1220] p-3 shadow-xl;
+  }
+  .card-hover {
+    @apply transition-colors hover:border-white/20 hover:bg-[#0d1525];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500/40 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-emerald-500 text-black hover:bg-emerald-400;
+  }
+  .btn-secondary {
+    @apply btn border border-white/10 bg-white/5 text-white hover:bg-white/10;
+  }
+  .btn-danger {
+    @apply btn bg-red-500/90 text-white hover:bg-red-500;
+  }
+  .btn-ghost {
+    @apply btn text-gray-300 hover:bg-white/5 hover:text-white;
+  }
+  .btn-sm {
+    @apply px-2 py-1 text-xs;
+  }
+
+  .input {
+    @apply w-full rounded-md border border-white/10 bg-[#070B14] px-3 py-2 text-sm text-white placeholder-gray-500 outline-none transition-colors focus:border-emerald-500/60 focus:ring-2 focus:ring-emerald-500/20;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium uppercase tracking-wide text-gray-400;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium;
+  }
+  .badge-green  { @apply badge border-emerald-500/30 bg-emerald-500/10 text-emerald-400; }
+  .badge-yellow { @apply badge border-amber-500/30   bg-amber-500/10   text-amber-400; }
+  .badge-red    { @apply badge border-red-500/30     bg-red-500/10     text-red-400; }
+  .badge-blue   { @apply badge border-blue-500/30    bg-blue-500/10    text-blue-400; }
+  .badge-gray   { @apply badge border-white/15       bg-white/5        text-gray-300; }
+  .badge-purple { @apply badge border-purple-500/30  bg-purple-500/10  text-purple-400; }
+
+  .table {
+    @apply w-full text-left text-sm;
+  }
+  .table thead th {
+    @apply border-b border-white/10 px-3 py-2 text-xs font-medium uppercase tracking-wide text-gray-400;
+  }
+  .table tbody td {
+    @apply border-b border-white/5 px-3 py-3 text-sm text-gray-200;
+  }
+  .table tbody tr:hover {
+    @apply bg-white/[0.02];
+  }
+}
