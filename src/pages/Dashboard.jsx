@@ -52,7 +52,7 @@ export default function Dashboard() {
             <div className="flex items-end justify-between">
                 <div>
                     <h1 className="text-2xl font-semibold text-white">Overview</h1>
-                    <p className="text-sm text-gray-400">Live snapshot of your airdrop pipeline</p>
+                    {/* <p className="text-sm text-gray-400">Live snapshot of your airdrop pipeline</p> */}
                 </div>
                 <Link to="/airdrops" className="btn-secondary">
                     <Sparkles size={14} /> Browse airdrops
